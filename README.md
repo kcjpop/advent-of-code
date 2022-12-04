@@ -1,5 +1,7 @@
 # Advent of Code 2022 in Flix 0.34.0
 
+![](https://github.com/kcjpop/advent-of-code-2022/actions/workflows/flix.yml/badge.svg)
+
 Learn Flix while playing with Advent of Code 2022.
 
 ## To run
