@@ -33,11 +33,22 @@ def findMostCalories(input: String) : Int32 = {
     |> Option.sum
 }
 
+def sumTopThree(input: String): Int32 = {
+    let splitByEmptyLine = String.split({ regex = "\n\n" });
+
+    input
+    |> splitByEmptyLine
+    |> List.map(sumCalories)
+    |> List.sort
+    |> List.reverse
+    |> List.take(3)
+    |> List.sum
+}
+
 namespace Day01 {
-    pub def run(): String \ IO = {
-        match readInput() {
-            case Ok(input) => input |> findMostCalories |> x -> "${x}"
-            case Err(msg) => "Failed to read input: ${msg}"
-        }
-    }
+    pub def partOne(): Result[Int32, String] \ IO = readInput()
+        |> Result.map(findMostCalories)
+
+    pub def partTwo(): Result[Int32, String] \ IO = readInput()
+        |> Result.map(sumTopThree)
 }

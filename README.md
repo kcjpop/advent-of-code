@@ -11,3 +11,30 @@ You need to have Java >= 11 installed, then run:
 ```bash
 $ java -jar flix.jar run
 ```
+
+## Notes
+
+### Day 01
+
+### Day 02
+
+### Day 03
+
+- When doing recursion, the stop case should be first. Or actually make sure it will eventually match.
+
+```flix
+def f(acc, xs) = match List.splitAt(3, xs) {
+  case (z, Nil) => acc ::: z :: Nil
+  case (x, y) => f(acc ::: x :: Nil, y)
+}
+```
+
+- To make a list of list:
+
+```flix
+let acc = nil; // An empty list, e.g. []
+let a = 1 :: 2 :: Nil; // [1, 2]
+let b = 3 :: 4 :: Nil; // [3, 4]
+
+acc ::: a :: Nil ::: b :: Nil; // [[1, 2], [3, 4]]
+```
