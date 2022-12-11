@@ -1,9 +1,14 @@
 namespace Utils {
-    pub def readToLines(filename: String): Result[List[String], String] \ IO = {
+    pub def readFile(filename: String): Result[String, String] \ IO = {
         let path = "resources/${filename}";
 
         File.read(path)
-        |> Result.map(String.trim >> String.lines)
+        |> Result.map(String.trim)
+    }
+
+    pub def readToLines(filename: String): Result[List[String], String] \ IO = {
+        readFile(filename)
+        |> Result.map(String.lines)
     }
 
     pub def listToPair(xs: List[a]): Option[(a, a)] = match xs {
