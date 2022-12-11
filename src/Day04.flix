@@ -43,6 +43,12 @@ namespace Day04 {
         case Nil => false
     }
 
+    def countCommon(xs: List[Section]): Int32 = match xs {
+        case s1 :: s2 :: _t => Set.intersection(s1, s2) |> Set.size
+        case _ :: Nil => 0
+        case Nil => 0
+    }
+
     // Should be Ok(526)
     pub def partOne(): Result[Int32, String] \ IO =  {
         def calc(xs: List[String]) = xs
@@ -54,5 +60,14 @@ namespace Day04 {
         // pair into a function, e.g.
         //   (3, 6) ||> Set.range should return Set#{3, 4, 5}
         // which is nicer and we don't really need to define a record at all.
+    }
+
+    // Should be Ok(886)
+    pub def partTwo(): Result[Int32, String] \ IO =  {
+        def calc(xs: List[String]) = xs
+            |> List.map(toSections >> countCommon)
+            |> List.count(b -> b > 0);
+
+        readToLines("day04.txt") |> Result.map(calc)
     }
 }
