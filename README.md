@@ -38,3 +38,17 @@ let b = 3 :: 4 :: Nil; // [3, 4]
 
 acc ::: a :: Nil ::: b :: Nil; // [[1, 2], [3, 4]]
 ```
+
+### Day 04
+
+- To match more than 2 elements of a list:
+
+```flix
+match xs {
+    case a :: b :: _t => a + b
+    case _ :: Nil => 0
+    case Nil => 0
+}
+```
+
+- There is that `||>` operator that can apply a pair into a function, e.g. `(3, 6) ||> Set.range`
