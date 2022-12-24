@@ -1,4 +1,3 @@
-
 namespace Day06 {
     use Utils.{readFile}
 
