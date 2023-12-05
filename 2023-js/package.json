@@ -8,5 +8,11 @@
   "engines": {
     "node": ">= 18"
   },
-  "main": "src/day01.js"
+  "main": "src/day01.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "peggy": "3.0.2"
+  }
 }
