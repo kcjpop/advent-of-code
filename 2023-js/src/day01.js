@@ -1,6 +1,6 @@
-import { readInput } from './helpers.js'
+import { readFile } from './helpers.js'
 
-const s = readInput('day01.txt')
+const s = readFile('./input/day01.txt')
 
 {
   const map = new Map([

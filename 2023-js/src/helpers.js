@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 
-export function readInput(filename) {
-  const path = new URL(`./input/${filename}`, import.meta.url)
+export function readFile(filePath) {
+  const path = new URL(filePath, import.meta.url)
   return fs.readFileSync(path, 'utf-8')
 }
