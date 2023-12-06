@@ -21,3 +21,9 @@ $ pnpm test
 ## Structure
 
 Solutions for each day are in `src/`. Their corresponding input are in `src/input/`.
+
+To start development, you can use built-in `watch` function from Node.js:
+
+```bash
+$ node --watch src/day05.js
+```
