@@ -6,7 +6,9 @@ Learn Flix while playing with Advent of Code 2022.
 
 ## To run
 
-You need to have Java >= 11 installed, then run:
+You need to have Java >= 11 installed, and a copy of [`flix.jar` 0.34.0](https://github.com/flix/flix/releases/tag/v0.34.0).
+
+Then in your terminal:
 
 ```bash
 $ java -jar flix.jar run
