@@ -20,6 +20,12 @@ jobs:
         with:
           java-version: "11"
           distribution: "temurin"
+      - uses: robinraju/release-downloader@v1.8
+        with:
+          repository: "flix/flix"
+          tag: "v0.34.0"
+          fileName: "flix.jar"
+          out-file-path: "./2022-flix"
       - name: Run tests
         working-directory: ./2022-flix
         run: java -jar flix.jar test
