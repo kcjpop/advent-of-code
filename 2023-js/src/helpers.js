@@ -22,3 +22,11 @@ export function zip(a, b) {
 
   return res
 }
+
+export function for2d(board, fn) {
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[i].length; j++) {
+      fn(board[i][j], i, j)
+    }
+  }
+}
